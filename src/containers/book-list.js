@@ -14,9 +14,10 @@ class BookList extends Component {
         return(
           <li
               key={book.title}
-              onClick ={() => this.props.selectBook(book)} 
-              className="list-group-item">
+              onClick ={() => this.props.selectBook(book)}
+              className="list-group-item list-group-item-action list-group-item-secondary d-flex justify-content-between align-items-center">
               {book.title}
+              <span className="badge badge-success badge-pill">{book.pages}</span>
           </li>
         )
       })
@@ -24,19 +25,26 @@ class BookList extends Component {
 
     render() {
         return (
-          <ul className="list-group col-sm-4">
-            {this.renderList()}
-          </ul>
+          <div className="col-sm-4">
+            <ul className="list-group">
+              <li className="list-group-item list-group-item-action active">
+                Books List
+              </li>
+              {this.renderList()}
+            </ul>
+          </div>
         )
     }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state) { // Esto es la "pega" entre el reducer y container
   /*
       El mapStateToProps(state) pasara el estado (books, activeBook)
       y los convertira en propiedades.
       Whatever is returned will show up as props inside of BookList
   */
+  // console.log(state);
+
     return {
       books: state.books
     }
@@ -49,7 +57,7 @@ function mapStateToProps(state) {
 
 /* Cualquier cosa que retorne esta funcion terminara
 como props en BookList container*/
-function  mapDispatchToProps(dispatch) {
+function  mapDispatchToProps(dispatch) { // Esto es la "pega" entre action y container
   /*En cualquier momento que selectBook sea llamado, el resultado
     deberia pasar por todos los reducers*/
   return bindActionCreators({ selectBook: selectBook }, dispatch)
