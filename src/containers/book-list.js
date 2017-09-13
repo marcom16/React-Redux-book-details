@@ -15,9 +15,9 @@ class BookList extends Component {
           <li
               key={book.title}
               onClick ={() => this.props.selectBook(book)}
-              className="list-group-item list-group-item-action list-group-item-secondary d-flex justify-content-between align-items-center">
+              className="list-group-item list-group-item-action list-group-item-secondary border-dark d-flex justify-content-between align-items-center">
               {book.title}
-              <span className="badge badge-success badge-pill">{book.pages}</span>
+              <span className="badge badge-dark badge-pill">{book.pages}</span>
           </li>
         )
       })
@@ -25,9 +25,9 @@ class BookList extends Component {
 
     render() {
         return (
-          <div className="col-sm-4">
+          <div className="col">
             <ul className="list-group">
-              <li className="list-group-item list-group-item-action active">
+              <li className="list-group-item list-group-item-action active bg-secondary border-dark">
                 Books List
               </li>
               {this.renderList()}

@@ -4,7 +4,7 @@ import { connect } from 'react-redux' /* Esta libreria espara unir las dos libre
 class BookDetail extends Component {
     render() {
       if (!this.props.book) {
-        return <div>Select a book to get started</div>
+        return <div></div>
       }
 
       return (
