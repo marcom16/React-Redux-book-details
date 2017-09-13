@@ -7,8 +7,8 @@ There are two methods for getting started with this repo.
 Checkout this repo, install dependencies, then start the gulp process with the following:
 
 ```
-> git clone https://github.com/marcom16/react-redux-template.git
-> cd react-redux-template
+> git clone https://github.com/marcom16/React-Redux-book-details.git
+> cd React-Redux-book-details
 > npm install
 > npm start
 ```
